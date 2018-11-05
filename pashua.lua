@@ -43,11 +43,16 @@ local function run (config, pashua_path)
 	local success
 	repeat
 		if #PASHUA_PLACES > 0 then
+			-- Try to run Pashua.app from the last element in PASHUA_PLACES
+			-- If unsuccesful, success is not true, and this line will look
+			-- at the next location.
 			success = os.execute(string.format("%s %s > %s 2> /dev/null",
 			                                   table.remove(PASHUA_PLACES),
 			                                   tmp_confname, tmp_resultname))
 		else
+			-- Pashua.app could not be found in any location
 			error("Pashua could not be found!")
+			os.remove(tmp_confname)
 		end
 	until success
 
