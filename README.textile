@@ -1,0 +1,47 @@
+h1. Overview
+
+@pashua.lua@ is a Lua module that allows you to run Pashua.app from Lua. For more information on Pashua, visit: https://www.bluem.net/en/projects/pashua/.
+
+h1. Compatibility
+
+Tested on Lua 5.3, and should be able to run on any Lua >=5.1.
+
+Since by default, Lua does not ship with OS X, you need to install it by yourself: https://www.lua.org/
+
+h1. Usage
+
+@pashua.lua@ returns a module containing one function: @run@. Run expects a configuration string.
+
+By default, @pashua.lua@ looks in these directories for Pashua.app:
+
+* @/Applications/@
+* @~/Applications/@
+* the current folder
+
+Alternatively, you can supply another path (string) to @run@ which will be looked at first.
+
+h2. Disclaimer
+
+Pashua.app is a Mac application. Hence, @pashua.lua@ contains some _Mac-isms_ (e.g. the default location of applications), and is not portable. In general, this is not a good practice.
+
+h1. License
+
+See @LICENSE@ file in this repository:
+
+bc.. Copyright (C) 2018 Eroica
+
+This software is provided 'as-is', without any express or implied
+warranty.  In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+3. This notice may not be removed or altered from any source distribution.
