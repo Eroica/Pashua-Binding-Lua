@@ -27,6 +27,10 @@ local PASHUA_PLACES = {
 	"./" .. BUNDLE_PATH,
 }
 
+--- Runs Pashua.app with specified configuration
+-- @tparam string config
+-- @tparam string pashua_path Path to Pashua binary (optional)
+-- @treturn {string,...} Return values from Pashua.app
 local function run (config, pashua_path)
 	if config == nil then error("Mising parameter `config'") end
 	if pashua_path then PASHUA_PLACES[#PASHUA_PLACES + 1] = pashua_path end

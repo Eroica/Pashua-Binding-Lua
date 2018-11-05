@@ -18,7 +18,7 @@ By default, @pashua.lua@ looks in these directories for Pashua.app:
 * @~/Applications/@
 * the current folder
 
-Alternatively, you can supply another path (string) to @run@ which will be looked at first.
+Alternatively, you can supply another path (string) to @run@ which @pashua.lua@ tries to execute first.
 
 h2. Disclaimer
 
