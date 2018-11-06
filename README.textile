@@ -2,11 +2,17 @@ h1. Overview
 
 @pashua.lua@ is a Lua module that allows you to run Pashua.app from Lua. For more information on Pashua, visit: https://www.bluem.net/en/projects/pashua/.
 
+The way how @pashua.lua@ checks for the location of Pashua.app is very simple. It does not check whether the Pashua binary exists; it simply tries to @os.execute@ it from a specific location, and tries another location if the call failed.
+
+The reason behind is that I do not like checking for a file’s existence in Lua by trying to open it in read mode (@io.open("filename")@), because @io.open@ can return @nil@ *either* when the file does not exist, *or* you don’t have the permission to read this file.
+
+To check for a file’s existence platform-independently, this would require an external dependency, e.g. "LuaFileSystem":https://github.com/keplerproject/luafilesystem or "SimpleFileSystem":https://github.com/Eroica/sfs.
+
 h1. Compatibility
 
 Tested on Lua 5.3, and should be able to run on any Lua >=5.1.
 
-Since by default, Lua does not ship with OS X, you need to install it by yourself: https://www.lua.org/
+Since by default, Lua does not ship with OS X, you need to install it by yourself: https://www.lua.org/.
 
 h1. Usage
 
